@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script src="js/soundmanager2.js"></script>
+<script>
+soundManager.setup({
+  // disable or enable debug output
+  debugMode: true,
+  // use HTML5 audio for MP3/MP4, if available
+  preferFlash: false,
+  useFlashBlock: true,
+  // path to directory containing SM2 SWF
+  url: '../lib/swf/',
+  // optional: enable MPEG-4/AAC support (requires flash 9)
+  flashVersion: 9,
+  onready: function() {
+    var mySound = soundManager.createSound({
+      url: 'mp3/demo.mp3'
+    });
+    mySound.play();
+  },
+  ontimeout: function() {
+    // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+  }
+});
+</script>
+</body>
+</html>
